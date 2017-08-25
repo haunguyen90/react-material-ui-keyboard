@@ -127,6 +127,7 @@ export class KeyboardKey extends React.Component<KeyboardKeyProps> {
             const icon: React.ComponentClass<any> = specialIcons[specialIcons.hasOwnProperty(key) ? key : constants.notFound];
             flatButtonProps.icon = React.createElement(icon, { style: { width: size, height: size } });
         }
+        flatButtonProps.className = `keyboard-key`;
         return React.createElement(FlatButton,  flatButtonProps);
     }
 };

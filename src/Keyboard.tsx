@@ -52,6 +52,7 @@ export interface KeyboardProps {
     correctorName?: string;
     corrector?: Function;
     disableEffects?: boolean;
+    className?: string;
 }
 
 export interface KeyboardState {
@@ -136,7 +137,11 @@ export class Keyboard extends React.Component<KeyboardProps, KeyboardState> {
         onInputValueChange: PropTypes.func,
         correctorName: PropTypes.string,
         corrector:  PropTypes.func,
-        disableEffects: PropTypes.bool
+        disableEffects: PropTypes.bool,
+        className: PropTypes.string
+    };
+    public static defaultProps: any = {
+        className: ''
     };
     public static contextTypes: any = { muiTheme: PropTypes.object };
     public static automaitcOpenPredicate: AutomaitcOpenPredicate = allwaysTruePredicate;
@@ -461,14 +466,21 @@ export class Keyboard extends React.Component<KeyboardProps, KeyboardState> {
             keyboardRows.push(<div key={rowIndex}>{keyboardRowKeys}</div>);
         }
         const keyboard: JSX.Element = (
-            <div style={styles}>
+            <div
+                style={styles}
+                className={this.props.className}
+            >
                 {inputTextField}
                 <Dialog
                     open={open}
                     modal
                     autoDetectWindowHeight={constants.boolFalse}
-                    contentStyle={dialogContentStyle}>
-                        <div>
+                    contentStyle={dialogContentStyle}
+                    className={`${this.props.className}__dialog`}
+                >
+                        <div
+                            className={`${this.props.className}__keyboardWrapper`}
+                        >
                             {keyboardTextField}
                             {keyboardRows}
                         </div>

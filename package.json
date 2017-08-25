@@ -1,6 +1,6 @@
 {
   "name": "react-material-ui-keyboard",
-  "version": "6.2.0",
+  "version": "6.2.2",
   "description": "Virtual keyboard for TextFeild when needed.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -27,7 +27,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NoHomey/react-material-ui-keyboard.git"
+    "url": "git+https://github.com/haunguyen90/react-material-ui-keyboard.git"
   },
   "peerDependencies": {
     "material-ui": "^0.18.6",
